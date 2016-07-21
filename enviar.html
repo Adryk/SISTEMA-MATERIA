@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CONSUMIR </title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
+	<script src="angular/angular.min.js"></script>
+	<script src="angular/angular-route.js"></script>
+	<script src="angular/angular-resource.js"></script>
+	<script src="js/enviar.js"></script>	
+</head>
+<body ng-app="app" style="background:rgb(150, 215, 185)">
+	<div ng-controller="control">
+		<h3 align="center">Cedula</h3><input align="center" type="text" style="background:rgb(237, 231, 105)" ng-model="cedula" >
+		<input type="submit" ng-click="BuscarAlumno()"  value="verificar" style="background:rgb(0, 228, 180)">
+		<br><br><br>
+		<table class="table table-striped" ng-show="mostrar">
+			<tr>
+
+				<td>id</td>
+				<td>NOMBRE</td>
+				<td>CUPO</td>	
+				<td>NUMERO MATRICULADOS</td>
+			</tr>
+			<tr ng-repeat="dat in lista1 ">
+				<td>{{dat.id_materia}}</td>
+				<td>{{dat.nombre }}</td>
+				<td>{{dat.cupo }}</td>
+				<td>{{dat.numero_matriculados}}</td>	
+			</tr>
+
+		</table>
+		<div style="background:#fff">
+			{{mensaje}}
+		</div>
+	</div>
+</body>
+
+</html>
